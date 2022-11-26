@@ -11,7 +11,7 @@ export function withSSRAuth<P extends { [key: string]: any }>(
 ) {
   return async (
     ctx: GetServerSidePropsContext
-  ): Promise<GetServerSidePropsResult<P> | undefined> => {
+  ): Promise<GetServerSidePropsResult<P>> => {
     const cookies = parseCookies(ctx);
 
     if (!cookies["auth.token"]) {
@@ -37,6 +37,8 @@ export function withSSRAuth<P extends { [key: string]: any }>(
           },
         };
       }
+
+      return Promise.reject(error);
     }
   };
 }
