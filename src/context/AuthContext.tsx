@@ -3,8 +3,8 @@ import Router from "next/router";
 import { destroyCookie, parseCookies, setCookie } from "nookies";
 import { createContext, ReactNode, useEffect, useState } from "react";
 
-import { cookieOptions } from "../common/cookiesOptions";
-import { api } from "../services/api";
+import { api } from "../services/apiClient";
+import { cookieOptions } from "../utils/cookiesOptions";
 
 type User = {
   email: string;
