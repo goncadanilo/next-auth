@@ -2,8 +2,8 @@ import axios, { AxiosError } from "axios";
 import { GetServerSidePropsContext } from "next";
 import { parseCookies, setCookie } from "nookies";
 
+import { cookieOptions } from "../constants/cookiesOptions";
 import { signOut } from "../context/AuthContext";
-import { cookieOptions } from "../utils/cookiesOptions";
 import { AuthTokenError } from "./errors/AuthTokenError";
 
 type ApiError = {
